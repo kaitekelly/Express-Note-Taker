@@ -8,6 +8,17 @@ let PORT = 8080;
 
 let server = http.createServer();
 
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true}));
+app.use(express.json());
+
+// ROUTER
+// The below points our server to a series of "route" files.
+// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
+
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
+
 //Routes
 
 // api routes
@@ -62,6 +73,9 @@ app.get("/notes", function(req, res) {
 //       res.end(data);
 //     });
 //   }
+
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 server.listen(PORT, function() {
     console.log("Server is listening on: http://localhost:" + PORT);
