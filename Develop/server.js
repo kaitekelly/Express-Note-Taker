@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 8080;
 // Middleware that functions with Express and Node 
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
-app.use(express.static("public"))
+app.use(express.static("public"));
 //Routes below passing in express to routes files
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);

@@ -23,20 +23,33 @@ module.exports = (app) => {
     console.log(req.body);
     // res.json(JSON.stringify(data)).push(req.body);
 
+    let noteTask = {
+      title: req.title, 
+      text: req.text,
+      id: req.id
+    }
+
     res.send(JSON.stringify(req.body));
+    //data keeps coming back undefined
+    data.push(req.body);
+    renderHtml();
   });
 
 
 
   app.delete("/api/notes/:id", (req, res) => {
     // Empty out the arrays of data
-    todoData.length = 0;
+    res.send("got a delete request at notes")
+    // todoData.length = 0;
     //   waitListData.length = 0;
 
-    res.json({
-      ok: true
-    });
+    // res.json({
+    //   // ok: true
+    // });
   });
 };
 
+function renderHtml() {
+  fs.writeFileSync("./public/assets/notes.html", render(data), "utf-8")
+}
 // function readFile();
