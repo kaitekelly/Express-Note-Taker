@@ -10,12 +10,12 @@ let { v4: uuidv4 } = require("uuid");
 module.exports = (app) => {
   //app.get(path, callback [, callback ...])
   app.get("/api/notes", (req, res) => {
-    fs.readFile("./db/db.json", "utf-8", (error, noteData) => {
+    fs.readFile("./db/db.json", "utf-8", (error, data) => {
       if (error) {
         return console.log(`this is a line 14 ${error}`);
       }
-      res.json(JSON.parse(noteData));
-      console.log(`this ${noteData} is from app.get. it was parsed`);
+      res.json(JSON.parse(data));
+      console.log(`this ${data} is from app.get. it was parsed`);
 
     });
   });
@@ -31,9 +31,10 @@ module.exports = (app) => {
       if (error) {
         return console.log(`this is a line 14 ${error}`);
       }
+      noteData.push(newNote);
       res.json(JSON.parse(noteData));
       console.log(`this ${noteData} is from app.get.in the readFilemethod`);
-      noteData.push(newNote);
+      
 
     });
 
