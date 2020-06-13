@@ -27,25 +27,25 @@ module.exports = (app) => {
       text: req.body.text,
       id: noteId
     }
+    let task;
     fs.readFile("./db/db.json", "utf-8", (error, noteData) => {
+      console.log("Test");
       if (error) {
         return console.log(`this is a line 14 ${error}`);
       }
-      noteData.push(newNote);
+   
       res.json(JSON.parse(noteData));
+      noteData.forEach.push(newNote);
+      let task = noteData;
       console.log(`this ${noteData} is from app.get.in the readFilemethod`);
-      
-
     });
 
-    fs.writeFile("./db/db.json", JSON.stringify(noteData, null, 2), err => {
+    fs.writeFile("./db/db.json", JSON.stringify(task, null, 2), err => {
       if (err) throw err;
       res.send("./db/db.json");
       console.log('Successfully wrote file')
     })
-    // res.send(JSON.stringify(newNote));
-    // noteTask.push(newNote);
-    console.log(noteData);
+    console.log(task);
   });
 
   // app.delete("/api/notes/:id", (req, res) => {
