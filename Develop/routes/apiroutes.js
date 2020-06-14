@@ -40,7 +40,7 @@ module.exports = (app) => {
       console.log(`this ${noteData} is from app.get.in the readFilemethod`);
       fs.writeFile("./db/db.json", JSON.stringify(testRead, null, 2), err => {
         if (err) throw err;
-        // res.send("./db/db.json");
+        res.send(testRead);
         console.log('Successfully wrote file')
       })
     });
@@ -48,16 +48,22 @@ module.exports = (app) => {
     
   });
 
-  // app.delete("/api/notes/:id", (req, res) => {
-  //   // Empty out the arrays of data
-  //   res.send("got a delete request from notes")
-  //   console.log("got a delete request from notes")
-  //   // todoData.length = 0;
+  app.delete("/api/notes/:id", (req, res) => {
+    console.log(req.parmas);
+    let noteId = req.params.id;
+    fs.readFile("./db/db.json", "utf-8", (error, noteData) => {
+      let testRead = JSON.parse(noteData);
+      let updatedNoteData = testRead.filter(note => note.id != noteId);
+      fs.writeFile("./db/db.json", JSON.stringify(updatedNoteData, null, 2), err => {
+        if (err) throw err;
+        res.send(updatedNoteData);
+        console.log('Successfully wrote file');
+      })
 
-  //   // res.json({
-  //   //   // ok: true
-  //   // });
-  // });
+    })
+
+
+  });
 };
 
 // function renderHtml() {
