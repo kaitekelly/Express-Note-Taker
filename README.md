@@ -21,9 +21,10 @@ Express-Note-Taker 📝
 n/a
 
 # Installation: 
-💾 In the command line of the working directory, type "npm install"
+💾 In the command line of the working directory, install the following NPM packages: NPM install, express, util, and uuid.
 
 # Usage: 
+This application is a task tracker. In the browser, type a task with details, then click save. You will see your task appear on the left hand side of the webpage. When you have completed your task, click the delete icon to remove the task from the task list. 
 
 # Screenshot of application in use:
 
@@ -32,11 +33,10 @@ Contributor, Kait Kelly. View github profile through badge above.
 Npms used: Node.js, NPM FileSystem. HTML, Javascript, CSS, Google Font's api
 
 # Tests: 
-⚙️
+⚙️ No tests have been performed on this application. 
 
 # License: 
 🖇 ISC
 
-# Link to video of application in use: 
-🎬
+
 
