@@ -5,6 +5,7 @@ module.exports = (app) => {
   app.get("/api/notes", (req, res) => {
     fs.readFile("./db/db.json", "utf-8", (error, data) => {
       if (error) {
+        throw error
       }
       res.json(JSON.parse(data));
     });
@@ -28,7 +29,7 @@ module.exports = (app) => {
       fs.writeFile("./db/db.json", JSON.stringify(testRead, null, 2), err => {
         if (err) throw err;
         res.send(testRead);
-        console.log('Successfully wrote file')
+        console.log(testRead, 'Successfully wrote file')
       })
     });
 
@@ -46,7 +47,6 @@ module.exports = (app) => {
       })
 
     })
-
 
   });
 };
