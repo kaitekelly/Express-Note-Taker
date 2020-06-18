@@ -30,7 +30,7 @@ This application is a task tracker. In the browser, type a task with details, th
 
 # Contributions: 
 Contributor, Kait Kelly. View github profile through badge above. 
-Npms used: Node.js, NPM FileSystem. HTML, Javascript, CSS, Google Font's api
+Npms used: Node.js, NPM FileSystem, NPM Express, HTML, Javascript, CSS, 
 
 # Tests: 
 ⚙️ No tests have been performed on this application. 
