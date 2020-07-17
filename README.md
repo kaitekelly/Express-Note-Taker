@@ -11,6 +11,9 @@ kaitekelly 👩🏻‍💻
 # Title:
 Express-Note-Taker 📝 
 
+# Link to Deployed Site:
+https://expresscilnotetaker.herokuapp.com/
+
 # Link to Repo:
 🚀 https://github.com/kaitekelly/Express-Note-Taker
 
